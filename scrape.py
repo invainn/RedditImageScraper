@@ -69,8 +69,8 @@ class ReactionScraper():
                     r.raw.decode_content = True
                     shutil.copyfileobj(r.raw, out_file)
 
-                        
-    
+        print('Finished downloading images from {0}'.format(self.subreddit))
+
     def _build_url(self):
         return self._BASE_URL + self.subreddit + '/.json?limit=' + str(self.limit)
 
