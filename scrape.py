@@ -6,7 +6,7 @@ import shutil
 import os
 import re
 
-class ReactionScraper():
+class RedditImageScraper():
     _BASE_URL = 'https://www.reddit.com/r/'
     _IMAGE_WHITELIST = ['i.imgur.com', 'i.redd.it']
 
@@ -75,4 +75,4 @@ class ReactionScraper():
         return self._BASE_URL + self.subreddit + '/.json?limit=' + str(self.limit)
 
 
-x = ReactionScraper(input('What subreddit would you like to scrape?: '), input('How many images?: '));
+x = RedditImageScraper(input('What subreddit would you like to scrape?: '), input('How many images?: '));
