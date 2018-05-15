@@ -20,7 +20,7 @@ class RedditImageScraper():
     # Gets each individual post and returns them in a list 
     def __get_posts(self):
         try:
-            r = requests.get(self._build_url(), headers={'User-Agent': 'Python Reaction Scraper'})
+            r = requests.get(self.__build_url(), headers={'User-Agent': 'Python Reaction Scraper'})
             r.raise_for_status()
         except requests.ConnectionError:
             print('Could not connect to website!')
@@ -71,7 +71,7 @@ class RedditImageScraper():
 
         print('Finished downloading images from {0}'.format(self.__subreddit))
 
-    def _build_url(self):
+    def __build_url(self):
         return self.__BASE_URL + self.__subreddit + '/.json?limit=' + str(self.__limit)
 
 
